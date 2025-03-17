@@ -1,0 +1,9 @@
+.lower-open {
+    transition-duration: 1s;
+    translate: 0 100%;
+}
+
+.upper-open {
+    translate: 0 -100%;
+    transition-duration: 1s;
+}

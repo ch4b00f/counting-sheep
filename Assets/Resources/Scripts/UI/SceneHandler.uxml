@@ -1,0 +1,5 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Resources/Scripts/UI/SceneHandler.uss?fileID=7433441132597879392&amp;guid=02f7b5a730ee6fb4383655b6955afd63&amp;type=3#SceneHandler" />
+    <engine:VisualElement name="upper" style="flex-grow: 1; background-color: rgb(0, 0, 0); transition-duration: 1s;" />
+    <engine:VisualElement name="lower" style="flex-grow: 1; background-color: rgb(0, 0, 0); transition-duration: 1s;" />
+</engine:UXML>

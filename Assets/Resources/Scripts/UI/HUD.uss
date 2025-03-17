@@ -1,6 +1,8 @@
 .count {
     font-size: 72px;
     -unity-text-align: middle-center;
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
 }
 
 .button {
@@ -22,4 +24,9 @@
 .button-inactive {
     transition-duration: 1s;
     translate: 0 250px;
+}
+
+.upper-open {
+    translate: 0 -100%;
+    transition-duration: 1s;
 }

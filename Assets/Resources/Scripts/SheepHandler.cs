@@ -9,11 +9,11 @@ public class SheepHandler : MonoBehaviour
     [SerializeField] private GameObject _sheepPrefab;
     [SerializeField] private EventReference _spawnSound;
 
-    private List<Sheep> _allSheep;
+    private List<GameObject> _allSheep = new List<GameObject>();
     private int _totalSheep;
 
     // costs of sheep and upgrades
-    private int _sheepCost = 1;
+    private int _sheepCost = 0;
     [SerializeField] private int[] _upgradeCosts = new int[3];
     private int _currentLevel = 1;
 
@@ -33,13 +33,10 @@ public class SheepHandler : MonoBehaviour
         OnUpgradeClicked.AddListener(UpgradeSheep);
     }
 
-    private void Update()
+    // spawn 1 free sheep on startup
+    private void Start()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SpawnSheep();
-            Debug.Log(_totalSheep);
-        }
+        SpawnSheep();
     }
 
     public void SpawnSheep()
@@ -55,7 +52,13 @@ public class SheepHandler : MonoBehaviour
         OnCostChanged.Invoke(_sheepCost);
 
         // instantiate a sheep
-        GameObject newSheep = GameObject.Instantiate(_sheepPrefab, new Vector3(Random.Range(-5f, 5f), 15f, Random.Range(-5f, -2f)), Quaternion.identity);
+        GameObject newSheep = GameObject.Instantiate(_sheepPrefab, transform);
+        newSheep.transform.position = new Vector3(Random.Range(-5f, 5f), 15f, Random.Range(-5f, -2f));
+        _allSheep.Add(newSheep);
+
+        // make the sheep the correct level
+        Sheep thisSheep = newSheep.GetComponent<Sheep>();
+        thisSheep.LevelUp(_currentLevel);
 
         RuntimeManager.PlayOneShot(_spawnSound);
         _totalSheep++;
@@ -77,5 +80,11 @@ public class SheepHandler : MonoBehaviour
         OnLevelChanged.Invoke(_currentLevel, _upgradeCosts[_currentLevel-1]);
 
         // change the level of all the sheep
+        for(int i = 0; i < _allSheep.Count; i++)
+        {
+            Sheep sheep = _allSheep[i].GetComponent<Sheep>();
+            sheep.LevelUp(_currentLevel);
+        }
     }
+    
 }

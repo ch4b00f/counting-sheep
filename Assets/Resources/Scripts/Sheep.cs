@@ -5,7 +5,6 @@ using FMODUnity;
 
 public class Sheep : MonoBehaviour
 {
-    [SerializeField] private Camera _mainCamera;
     [SerializeField] private ParticleSystem _sparks;
 
     [SerializeField] private float _walkTime;
@@ -15,11 +14,14 @@ public class Sheep : MonoBehaviour
     [SerializeField] private EventReference _bleetSound;
     [SerializeField] private EventReference _countSound;
 
+    [SerializeField] private Sprite[] _sprites = new Sprite[3];
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+
     private Vector3 _forward;
     private Rigidbody _rigidBody;
 
     public bool _isJumping = false;
-    public int level = 1;
+    private int _level = 1;
 
     private void Start()
     {
@@ -71,11 +73,11 @@ public class Sheep : MonoBehaviour
 
         if(transform.position.z > 0)
         {
-            transform.DOLocalJump( new Vector3(transform.position.x, 1.5f, Random.Range(-2, -5)), 3f, 1, _jumpTime).SetDelay(.25f).SetEase(Ease.Flash);
+            transform.DOLocalJump( new Vector3(transform.position.x, -14, Random.Range(-2f, -5f)), 3f, 1, _jumpTime).SetDelay(.25f).SetEase(Ease.Flash);
         }
         else
         {
-            transform.DOLocalJump(new Vector3(transform.position.x, 1.5f, Random.Range(2, 5)), 3f, 1, _jumpTime).SetDelay(.25f).SetEase(Ease.Flash);
+            transform.DOLocalJump(new Vector3(transform.position.x, -14, Random.Range(2f, 5f)), 3f, 1, _jumpTime).SetDelay(.25f).SetEase(Ease.Flash);
         }
         StartCoroutine(RandomWait(true));
 
@@ -90,7 +92,7 @@ public class Sheep : MonoBehaviour
     {
         if (_isJumping == true)
         {
-            switch (level)
+            switch (_level)
             {
                 case 1:
                     GameManager.jumpsCounted++; break;
@@ -107,5 +109,16 @@ public class Sheep : MonoBehaviour
             RuntimeManager.PlayOneShot(_countSound);
             _isJumping = false;
         }
+    }
+
+    /// <summary>
+    /// Change sprite when leveling up
+    /// </summary>
+    public void LevelUp(int level)
+    {
+        if(level <=1) return;
+
+        _level = level;
+        _spriteRenderer.sprite = _sprites[level-2];
     }
 }

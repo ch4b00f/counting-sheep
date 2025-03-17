@@ -32,21 +32,22 @@ public class HUD : MonoBehaviour
 
         _sheepButton.clicked += () => SpawnClicked();
         _upgradeButton.clicked += () => UpgradeClicked();
+        _sleepButton.clicked += () => SleepClicked();
     }
 
     private void ActivateButtons(int jumps)
     {
-        if (jumps == GameManager.thresholds[0])
+        if (jumps >= GameManager.thresholds[0])
         {
             _sheepButton.RemoveFromClassList("button-inactive");
         }
 
-        if (jumps == GameManager.thresholds[1])
+        if (jumps >= GameManager.thresholds[1])
         {
             _upgradeButton.RemoveFromClassList("button-inactive");
         }
 
-        if (jumps == GameManager.thresholds[2])
+        if (jumps >= GameManager.thresholds[2])
         {
             _sleepButton.RemoveFromClassList("button-inactive");
         }
@@ -60,6 +61,11 @@ public class HUD : MonoBehaviour
     private void UpgradeClicked()
     {
         SheepHandler.OnUpgradeClicked.Invoke();
+    }
+
+    private void SleepClicked()
+    {
+        SceneHandler.OnSleepClicked.Invoke();
     }
     
 

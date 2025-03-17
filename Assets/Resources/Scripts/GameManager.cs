@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -23,7 +22,7 @@ public class GameManager : MonoBehaviour
 
     private void CheckJumps()
     {
-        if (jumpsCounted == thresholds[0] || jumpsCounted == thresholds[1] || jumpsCounted == thresholds[2])
+        if (jumpsCounted >= thresholds[0] || jumpsCounted >= thresholds[1] || jumpsCounted >= thresholds[2])
         {
             OnThresholdReached.Invoke(jumpsCounted);
         }
