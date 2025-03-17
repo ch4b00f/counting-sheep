@@ -1,0 +1,8 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Resources/Scripts/UI/HUD.uss?fileID=7433441132597879392&amp;guid=c3c5eeb53b01a194ebfaf50cc2f8f9ea&amp;type=3#HUD" />
+    <engine:VisualElement name="root" style="flex-grow: 1; justify-content: center; align-self: auto; align-items: center; align-content: auto; background-color: rgb(43, 18, 8);">
+        <engine:Label text="Its 2:52am, and youjust can&apos;t sleep.&#10;Mayhaps, have you tried..." style="-unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Fonts/NormalFont.ttf?fileID=12800000&amp;guid=20d85f6d7ec5f9c4e9383ac42f6429a9&amp;type=3#NormalFont&quot;); -unity-text-align: middle-center; font-size: 50px; color: rgb(255, 255, 255);" />
+        <engine:Label text="Counting   Sheep" style="-unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Fonts/NormalFont.ttf?fileID=12800000&amp;guid=20d85f6d7ec5f9c4e9383ac42f6429a9&amp;type=3#NormalFont&quot;); -unity-text-align: middle-center; font-size: 150px; color: rgb(255, 255, 255); -unity-font-style: bold; margin-bottom: 169px;" />
+        <engine:Button text="PLAY" name="button" class="button" style="align-self: center; font-size: 64px;" />
+    </engine:VisualElement>
+</engine:UXML>

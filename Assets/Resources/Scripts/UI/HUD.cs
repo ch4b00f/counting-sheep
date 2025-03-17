@@ -71,7 +71,7 @@ public class HUD : MonoBehaviour
 
     private void UpdateSpawnButton(int newCost)
     {
-        _sheepButton.text = $"Buy 1 sheep\n\nCOST = {newCost} jumps";
+        _sheepButton.text = $"Buy 1 sheep\nCOST = {newCost} jumps";
     }
 
     private void UpdateUpgradeButton(int level, int newCost)
@@ -79,9 +79,9 @@ public class HUD : MonoBehaviour
         switch (level) 
         {
             case 2:
-                _upgradeButton.text = $"GOLDEN SHEEP\n(worth 10)\n\nCOST = {newCost}"; break;
+                _upgradeButton.text = $"GOLDEN SHEEP\nCOST = {newCost}"; break;
             case 3:
-                _upgradeButton.text = $"CANDY SHEEP\n(worth 100)\n\nCOST = {newCost}"; break;
+                _upgradeButton.text = $"CANDY SHEEP\nCOST = {newCost}"; break;
             case 4:
                 _upgradeButton.text = $"MAX LEVEL";
                 _upgradeButton.focusable = false; break;

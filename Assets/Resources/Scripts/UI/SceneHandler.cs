@@ -12,6 +12,7 @@ public class SceneHandler : MonoBehaviour
     private VisualElement _lower;
 
     public static UnityEvent OnSleepClicked = new UnityEvent();
+    public static UnityEvent<string> OnPlayClicked = new UnityEvent<string>();
 
     private void Awake()
     {
@@ -22,13 +23,12 @@ public class SceneHandler : MonoBehaviour
 
         // make this different later
         OnSleepClicked.AddListener(Quit);
+        OnPlayClicked.AddListener(LoadScene);
     }
 
     private void Start()
     {
-        // open em up
-        _upper.AddToClassList("upper-open");
-        _lower.AddToClassList("lower-open");
+        StartCoroutine(OpenCurtain());
     }
 
     private void LoadScene(string scene)
@@ -55,5 +55,12 @@ public class SceneHandler : MonoBehaviour
         _lower.RemoveFromClassList("lower-open");
         yield return new WaitForSeconds(1f);
         Application.Quit();
+    }
+
+    private IEnumerator OpenCurtain()
+    {
+        yield return new WaitForSeconds(.5f);
+        _upper.AddToClassList("upper-open");
+        _lower.AddToClassList("lower-open");
     }
 }

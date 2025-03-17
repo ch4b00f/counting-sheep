@@ -5,8 +5,18 @@
     -unity-font-style: bold;
 }
 
+.button-inactive {
+    transition-duration: 1s;
+    translate: 0 250px;
+}
+
+.upper-open {
+    translate: 0 -100%;
+    transition-duration: 1s;
+}
+
 .button {
-    width: 350px;
+    width: 400px;
     height: 200px;
     font-size: 35px;
     margin-top: 15px;
@@ -19,14 +29,8 @@
     border-left-width: 0;
     transition-duration: 3s;
     transition-timing-function: ease-out-elastic;
-}
-
-.button-inactive {
-    transition-duration: 1s;
-    translate: 0 250px;
-}
-
-.upper-open {
-    translate: 0 -100%;
-    transition-duration: 1s;
+    -unity-font-definition: url("project://database/Assets/TextMesh%20Pro/Fonts/NormalFont.ttf?fileID=12800000&guid=20d85f6d7ec5f9c4e9383ac42f6429a9&type=3#NormalFont");
+    background-image: resource('Art/UI/button_normal');
+    color: rgb(0, 0, 0);
+    -unity-background-image-tint-color: rgb(255, 255, 255);
 }
