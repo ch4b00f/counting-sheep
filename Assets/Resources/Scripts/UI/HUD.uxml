@@ -1,0 +1,11 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Resources/Scripts/UI/HUD.uss?fileID=7433441132597879392&amp;guid=c3c5eeb53b01a194ebfaf50cc2f8f9ea&amp;type=3#HUD" />
+    <engine:VisualElement name="root" style="flex-grow: 1;">
+        <engine:Label text="Label" name="count" class="count" />
+        <engine:VisualElement name="Buttons" style="flex-grow: 1; flex-direction: row; justify-content: center; align-self: auto; align-items: flex-end;">
+            <engine:Button text="Buy 1 sheep&#10;&#10;COST = 1 jumps&#10;" name="sheep" class="button button-inactive" style="transition-timing-function: ease-out-elastic;" />
+            <engine:Button text="BLACK SHEEP&#10;(worth 3)&#10;&#10;COST = 5 jumps" name="upgrade" class="button button-inactive" />
+            <engine:Button text="Finish counting&#10;&amp; go to sleep" name="sleep" class="button button-inactive" />
+        </engine:VisualElement>
+    </engine:VisualElement>
+</engine:UXML>

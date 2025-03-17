@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{755594ff-39e4-4aca-927b-54030aa8abf2}">
+		<property name="assetPath">
+			<value>202753__sheepfilms__slide-whistle.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>21.359999999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{46c8aa80-8fd2-45b9-8c5c-ddb78d9806c9}</destination>
+		</relationship>
+	</object>
+</objects>
